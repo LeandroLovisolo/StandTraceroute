@@ -1,0 +1,10 @@
+#!/bin/sh
+
+echo "Building dist directory"
+ember build --prod
+echo
+echo "SVN update"
+# ssh betagramas@vps "cd anagramas; svn update; npm install --prod"
+echo
+echo "Syncing dist directory"
+rsync -a -v --delete -e ssh dist betagramas@vps:/home/betagramas/anagramas

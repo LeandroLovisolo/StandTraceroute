@@ -1,0 +1,13 @@
+# MaxMind GeoIP City Database
+data/GeoLiteCity.dat
+
+# Python
+*.pyc
+
+# Node and Bower packages
+frontend/node_modules
+frontend/bower_components
+
+# Temporary files
+frontend/tmp
+

@@ -1,0 +1,63 @@
+<div class="container-fluid index-container">
+  <div class="row">
+    <div class="col-sm-3">
+      <form {{action 'trace' on='submit'}} class="search-form">
+        <div {{bind-attr class=":form-group errorMessage:has-error"}}>
+          <div class="input-group">
+            {{input value=hostname disabled=loading class="form-control"
+                    placeholder="Ingresá un hostname"}}
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button"
+                      {{bind-attr disabled=loading}}
+                      {{action 'trace'}}>Trazar</button>
+            </span>
+          </div>
+        </div>
+      </form>
+
+      {{#if errorMessage}}
+        <div class="alert alert-danger" role="alert">
+          <span class="glyphicon glyphicon-exclamation-sign"
+                aria-hidden="true"></span>
+          <span class="sr-only">Error:</span>
+          {{errorMessage}}
+        </div>
+      {{/if}}
+
+      {{#if loading}}
+        <div class="loading">
+          <img src="/loading.gif" alt="loading">
+        </div>
+      {{/if}}
+
+      {{#unless hopsEmpty}}
+        <div class="list-group hop-list">
+          {{#each hop in hops}}
+            <div class="list-group-item">
+              <strong class="list-group-item-heading">TTL {{hop.ttl}}</strong>
+              <br>
+              {{#each gateway in hop.gateways}}
+                <div class="pull-left">
+                  <small>{{gateway.ip}}</small>
+                </div>
+                <div class="pull-right">
+                  <small>{{gateway.location}}</small>
+                </div>
+                <div class="clearfix"></div>
+              {{/each}}
+              <!-- <p class="list&#45;group&#45;item&#45;text"> -->
+              <!--   Donec id elit non mi porta gravida at eget metus. -->
+              <!--   Maecenas sed diam eget risus varius blandit. -->
+              <!-- </p> -->
+            </div>
+          {{/each}}
+        </div>
+      {{/unless}}
+    </div>
+
+    <div class="col-sm-9 map-column">
+      {{google-map lat=latitude lng=longitude zoom=zoom polylines=polylines
+                   markers=markers googleObject=googleMapObject}}
+    </div>
+  </div>
+</div>
