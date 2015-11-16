@@ -1,20 +1,9 @@
-TdC-TP2
-=======
+StandTraceroute
+===============
 
-Teoría de las Comunicaciones: Trabajo Práctico 2
+Implementación de [traceroute](https://en.wikipedia.org/wiki/Traceroute) acompañada de una interfaz web que dibuja en un mapa interactivo las rutas descubiertas desde la computadora donde corre la aplicación y el host ingresado por el usuario.
 
-1° Cuatrimestre 2014
-
-Departamento de Computación,  
-Facultad de Ciencias Exactas y Naturales,  
-Universidad de Buenos Aires.
-
-Alumnos
--------
-
-Nahuel Delgado (LU 601/11) [nahueldelgado@gmail.com](mailto:nahueldelgado@gmail.com)  
-Leandro Lovisolo (LU 645/11) [leandro@leandro.me](mailto:leandro@leandro.me)  
-Lautaro José Petaccio  (LU 443/11) [lausuper@gmail.com](mailto:lausuper@gmail.com)
+Esta aplicación fue creada para ser exhibida en un stand durante la [Semana de la Computación 2015](http://www.dc.uba.ar/events/sdc/2015) de la [Universidad de Buenos Aires](http://www.uba.ar).
 
 Requerimientos
 --------------
